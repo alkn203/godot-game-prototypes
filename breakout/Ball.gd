@@ -5,7 +5,7 @@ extends KinematicBody2D
 const SPEED = 300
 
 # 変数
-var velocity: = Vector2.DOWN * SPEED 
+var velocity: Vector2 = Vector2.DOWN * SPEED 
 
 # 毎フレーム処理
 func _physics_process(delta: float) -> void:
