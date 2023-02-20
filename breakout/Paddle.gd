@@ -36,6 +36,6 @@ func _input(event) -> void:
             dx = (pos_x - prev_x) * X_SENSE
             position.x += dx 
             # 画面からはみ出ないようにする
-            position.x = clamp(position.x, min_x, max_x)
+            #position.x = clamp(position.x, min_x, max_x)
             # 前のx座標更新
             prev_x = pos_x
