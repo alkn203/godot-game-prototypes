@@ -10,7 +10,7 @@ const PANEL_NUM = PANEL_NUM_X * PANEL_NUM_X
 const BOMB_NUM = 10
 
 # シーン
-const MyPanel: PackedScene = preload("res://MyPanel.tscn")
+const MyPanel = preload("res://MyPanel.tscn")
 
 #　変数
 var bomb_array: Array = []
