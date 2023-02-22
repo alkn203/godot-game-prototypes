@@ -1,4 +1,4 @@
-class_name Baggage
+# Baggageクラス
 extends Sprite
 
 # 変数
