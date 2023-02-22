@@ -8,8 +8,11 @@ const BLOCK_NUM = 48
 const OFFSET_X = BLOCK_WIDTH / 2
 const OFFSET_Y = BLOCK_HEIGHT / 2
 
+# クラス
+const BlockScene = preload("res://Block.tscn")
 # シーン
-const Block = preload("res://Block.tscn")
+const Block = preload("res://Block.gd")
+const Ball = preload("res://Ball.gd")
 
 # 変数
 
@@ -25,7 +28,7 @@ func _create_block() -> void:
         var gx: int = i % BLOCK_NUM_X
         var gy: int = int(i / BLOCK_NUM_X)
         # ブロック作成
-        var block: Block = Block.instance()
+        var block: Block = BlockScene.instance()
         # 配置
         block.position.x = gx * BLOCK_WIDTH + OFFSET_X + BLOCK_WIDTH
         block.position.y = gy * BLOCK_HEIGHT + OFFSET_Y + BLOCK_HEIGHT
@@ -37,8 +40,9 @@ func _create_block() -> void:
             block.get_node("Sprite").frame = 2
 
 # スクリーンから出たオブジェクトを補足
-func _on_Screen_body_exited(body) -> void:
-    # ボールの場合
-    if body is Ball:
-        # ゲーム再ロード
-        get_tree().change_scene("res://Main.tscn")
+func _on_Screen_body_exited(ball: Ball) -> void:
+    # ボール以外の場合
+    if not ball:
+        return
+    # ゲーム再ロード
+    get_tree().change_scene("res://Main.tscn")

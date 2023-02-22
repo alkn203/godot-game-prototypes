@@ -3,6 +3,9 @@ extends KinematicBody2D
 
 # 定数
 const SPEED = 300
+# クラス
+const Paddle = preload("res://Paddle.gd")
+const Block = preload("res://Block.gd")
 
 # 変数
 var velocity: Vector2 = Vector2.DOWN * SPEED 

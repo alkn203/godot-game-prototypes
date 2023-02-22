@@ -7,8 +7,10 @@ const PIECE_NUM_X = 4
 const PIECE_OFFSET = PIECE_SIZE / 2
 const DURATION = 0.25
 
+# クラス
+const Piece = preload("res://Piece.gd")
 # シーン
-const Piece = preload("res://Piece.tscn")
+const PieceScene = preload("res://Piece.tscn")
 
 # 変数
 var blank_piece: Piece
@@ -46,7 +48,7 @@ func _create_piece() -> void:
         # 番号
         var num: int = i + 1
         # ピース作成
-        var piece: Piece = Piece.instance()
+        var piece: Piece = PieceScene.instance()
         add_child(piece)
         # 配置
         piece.position.x = gx * PIECE_SIZE + PIECE_OFFSET
