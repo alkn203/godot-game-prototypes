@@ -1,4 +1,4 @@
-class_name Player
+# Playerクラス
 extends AnimatedSprite
 
 # 変数
