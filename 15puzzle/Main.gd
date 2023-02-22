@@ -8,7 +8,7 @@ const PIECE_OFFSET = PIECE_SIZE / 2
 const DURATION = 0.25
 
 # シーン
-const Piece: PackedScene = preload("res://Piece.tscn")
+const Piece = preload("res://Piece.tscn")
 
 # 変数
 var blank_piece: Piece
