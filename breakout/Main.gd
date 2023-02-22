@@ -9,7 +9,7 @@ const OFFSET_X = BLOCK_WIDTH / 2
 const OFFSET_Y = BLOCK_HEIGHT / 2
 
 # シーン
-const Block: PackedScene = preload("res://Block.tscn")
+const Block = preload("res://Block.tscn")
 
 # 変数
 

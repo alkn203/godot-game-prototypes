@@ -1,4 +1,4 @@
-class_name Card
+# Cardクラス
 extends Area2D
 
 # 定数

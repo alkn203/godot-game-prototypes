@@ -28,7 +28,7 @@ func move_piece(piece: Piece) -> void:
     # 隣り合わせの判定
     if ((p1.x == p2.x and dy == 1) or (p1.y == p2.y and dx == 1)):
         # タッチされたピース位置を一時変数に退避
-        var t_pos := Vector2(piece.position.x, piece.position.y)
+        var t_pos: Vector2 = Vector2(piece.position.x, piece.position.y)
         # Tweenでピース入れ替えアニメーション
         var tween: SceneTreeTween = get_tree().create_tween()
         tween.set_parallel(true)
@@ -46,7 +46,7 @@ func _create_piece() -> void:
         # 番号
         var num: int = i + 1
         # ピース作成
-        var piece = Piece.instance()
+        var piece: Piece = Piece.instance()
         add_child(piece)
         # 配置
         piece.position.x = gx * PIECE_SIZE + PIECE_OFFSET

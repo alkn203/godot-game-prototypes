@@ -1,4 +1,4 @@
-class_name Paddle
+# Paddleクラス
 extends KinematicBody2D
 
 # 定数
@@ -11,6 +11,7 @@ var prev_x: float
 var dx: float = 0
 var min_x: float
 var max_x: float
+
 onready var screen_size = get_viewport_rect().size
 
 # 初期化処理

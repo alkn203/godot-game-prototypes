@@ -14,7 +14,7 @@ const KEY_ARRAY = [
     ["ui_left", Vector2.LEFT],
     ["ui_right", Vector2.RIGHT]]
 
-const Baggage: PackedScene = preload("res://Baggage.tscn")
+const Baggage = preload("res://Baggage.tscn")
 
 # 変数
 var can_input: bool = true

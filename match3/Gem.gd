@@ -1,4 +1,4 @@
-class_name Gem
+# Gemクラス
 extends Area2D
 
 # 変数
@@ -11,7 +11,7 @@ var index_pos: Vector2 = Vector2.ZERO
 onready var main: Node2D = get_node("/root/Main")
 
 # クリック時処理
-func _on_Gem_input_event(viewport, event, shape_idx):
+func _on_Gem_input_event(viewport, event, shape_idx) -> void:
     # マウス入力
     if event is InputEventMouseButton:
         # マウスボタンの押下
@@ -20,7 +20,7 @@ func _on_Gem_input_event(viewport, event, shape_idx):
             main.select_pair(self)
 
 # 色設定
-func set_random_color(color):
+func set_random_color(color: int) -> void:
     # ランダムな色
     num = randi() % color
     get_node("Sprite").frame = num

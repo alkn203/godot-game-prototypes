@@ -11,8 +11,8 @@ const DROP_POSITON = Vector2(128, 480 + CARD_HEIGHT * 1.5)
 const DURATION = 0.15
 
 # シーン
-const Card: PackedScene = preload("res://Card.tscn")
-const Cursor: PackedScene = preload("res://Cursor.tscn")
+const Card = preload("res://Card.tscn")
+const Cursor = preload("res://Cursor.tscn")
 
 # 変数
 var pair: Array = []
