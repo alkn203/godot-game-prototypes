@@ -42,7 +42,7 @@ func _create_gem(type: String = "") -> void:
         var x_index = i % GEM_NUM_X
         var y_index = int(i / GEM_NUM_X)
         # ジェム作成
-        var gem = Gem.instance()
+        var gem: Gem = Gem.instance()
         gem.position.x = x_index * GEM_SIZE + GEM_OFFSET
         gem.position.y = y_index * GEM_SIZE + GEM_OFFSET
         # 画面外の場合
@@ -227,7 +227,7 @@ func _remove_gem():
                     target.drop_count += 1
      
             # 消去アニメーション用ダミー作成
-            var dummy = Gem.instance()
+            var dummy: Gem = Gem.instance()
             dummy.position = gem.position
             dummy.get_node("Sprite").frame = gem.get_node("Sprite").frame
             dummy_layer.add_child(dummy)
