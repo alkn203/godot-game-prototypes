@@ -9,8 +9,10 @@ const PANEL_NUM_X = 9
 const PANEL_NUM = PANEL_NUM_X * PANEL_NUM_X
 const BOMB_NUM = 10
 
+# クラス
+const MyPanel = preload("res://MyPanel.gd")
 # シーン
-const MyPanel = preload("res://MyPanel.tscn")
+const MyPanelScene = preload("res://MyPanel.tscn")
 
 #　変数
 var bomb_array: Array = []
@@ -29,7 +31,7 @@ func _create_panel() -> void:
         var gx: int = i % PANEL_NUM_X
         var gy: int = int(i / PANEL_NUM_X)
         # パネル作成
-        var panel: MyPanel = MyPanel.instance()
+        var panel: MyPanel = MyPanelScene.instance()
         panel.position.x = gx * PANEL_SIZE
         panel.position.y = gy * PANEL_SIZE
         # インデックス位置

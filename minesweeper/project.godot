@@ -8,16 +8,6 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "Area2D",
-"class": "MyPanel",
-"language": "GDScript",
-"path": "res://MyPanel.gd"
-} ]
-_global_script_class_icons={
-"MyPanel": ""
-}
-
 [application]
 
 config/name="Minesweeper"
