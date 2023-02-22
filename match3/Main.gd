@@ -14,9 +14,13 @@ var pair: Array = []
 var match_count: int = 0
 var second_swap: bool = false
 
+# クラス
+const Gem = preload("res://Gem.gd")
+const Cursor = preload("res://Cursor.gd")
+
 # シーン
-const Gem = preload("res://Gem.tscn")
-const Cursor = preload("res://Cursor.tscn")
+const GemScene = preload("res://Gem.tscn")
+const CursorScene = preload("res://Cursor.tscn")
 
 # レイヤー
 onready var gem_layer: CanvasLayer = get_node("GemLayer")
@@ -42,7 +46,7 @@ func _create_gem(type: String = "") -> void:
         var x_index = i % GEM_NUM_X
         var y_index = int(i / GEM_NUM_X)
         # ジェム作成
-        var gem: Gem = Gem.instance()
+        var gem: Gem = GemScene.instance()
         gem.position.x = x_index * GEM_SIZE + GEM_OFFSET
         gem.position.y = y_index * GEM_SIZE + GEM_OFFSET
         # 画面外の場合
@@ -85,7 +89,7 @@ func select_pair(gem: Gem) -> void:
     # 一つ目
     if pair.size() == 0:
         # カーソル表示
-        var cursor1: Cursor = Cursor.instance()
+        var cursor1: Cursor = CursorScene.instance()
         cursor1.position = gem.position
         cursor_layer.add_child(cursor1)
         pair.append(gem)
@@ -95,7 +99,7 @@ func select_pair(gem: Gem) -> void:
 
     # 二つ目
     if pair.size() == 1:
-        var cursor2: Cursor = Cursor.instance()
+        var cursor2: Cursor = CursorScene.instance()
         cursor2.position = gem.position
         cursor_layer.add_child(cursor2)
         pair.append(gem)
@@ -227,7 +231,7 @@ func _remove_gem():
                     target.drop_count += 1
      
             # 消去アニメーション用ダミー作成
-            var dummy: Gem = Gem.instance()
+            var dummy: Gem = GemScene.instance()
             dummy.position = gem.position
             dummy.get_node("Sprite").frame = gem.get_node("Sprite").frame
             dummy_layer.add_child(dummy)
