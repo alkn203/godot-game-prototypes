@@ -1,4 +1,5 @@
 # Paddleクラス
+class_name Paddle
 extends KinematicBody2D
 
 # 定数

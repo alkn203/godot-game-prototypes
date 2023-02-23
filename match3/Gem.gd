@@ -1,4 +1,5 @@
 # Gemクラス
+class_name Gem
 extends Area2D
 
 # 変数

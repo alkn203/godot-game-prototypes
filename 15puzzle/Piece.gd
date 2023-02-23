@@ -1,4 +1,5 @@
 # Pieceクラス
+class_name Piece
 extends Area2D
 
 # インデックス位置

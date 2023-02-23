@@ -1,4 +1,5 @@
 # MyPanelクラス
+class_name MyPanel
 extends Area2D
 
 # 変数

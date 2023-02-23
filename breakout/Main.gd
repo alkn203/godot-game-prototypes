@@ -8,13 +8,8 @@ const BLOCK_NUM = 48
 const OFFSET_X = BLOCK_WIDTH / 2
 const OFFSET_Y = BLOCK_HEIGHT / 2
 
-# クラス
-const BlockScene = preload("res://Block.tscn")
 # シーン
-const Block = preload("res://Block.gd")
-const Ball = preload("res://Ball.gd")
-
-# 変数
+const Block = preload("res://Block.tscn")
 
 # 初期化処理
 func _ready():
@@ -28,7 +23,7 @@ func _create_block() -> void:
         var gx: int = i % BLOCK_NUM_X
         var gy: int = int(i / BLOCK_NUM_X)
         # ブロック作成
-        var block: Block = BlockScene.instance()
+        var block: Block = Block.instance()
         # 配置
         block.position.x = gx * BLOCK_WIDTH + OFFSET_X + BLOCK_WIDTH
         block.position.y = gy * BLOCK_HEIGHT + OFFSET_Y + BLOCK_HEIGHT
