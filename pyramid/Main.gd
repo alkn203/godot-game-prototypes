@@ -38,11 +38,6 @@ func _ready() -> void:
     _set_pyramid_card()
     # 手元カードの配置
     _set_hand_card()
-    # ボタンフォントセット
-    var font = DynamicFont.new()
-    font.font_data = load("res://mplus-1c-regular.ttf")
-    button.set("custom_fonts/font", font)
-    button.get("custom_fonts/font").set_size(48)
 
 # ピラミッド型のカード設定 
 func _set_pyramid_card() -> void:
@@ -215,7 +210,3 @@ func _after_remove() -> void:
     if remove_count == 0:
     # 次に開けるカードがあるかチェック
         _flip_next_card()
-
-
-func _on_Button_pressed() -> void:
-    get_tree().change_scene("res://Main.tscn")

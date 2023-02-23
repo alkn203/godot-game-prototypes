@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Card.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Button.gd" type="Script" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0941176, 0.713726, 0.905882, 1 )
@@ -120,6 +121,6 @@ margin_top = 800.0
 margin_right = 401.0
 margin_bottom = 874.0
 custom_styles/normal = SubResource( 1 )
-text = "RETRY"
+script = ExtResource( 3 )
 
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
